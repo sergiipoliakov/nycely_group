@@ -46,8 +46,6 @@ const Quize = () => {
   const [answers, setAnswers] = useState<{ questione: string; answer: string; }[]>([])
   const { possibleAnswers, title, questione } = questions[step - 1] || {}
   const onUnswerClick = (answer: string) => {
-  console.log('🚀 ~ page.tsx:14 ~ Home ~ process.env.SERVER_URL:', process.env.SERVER_URL)
-
     setAnswers((prev) => ([
       ...prev,
       {
