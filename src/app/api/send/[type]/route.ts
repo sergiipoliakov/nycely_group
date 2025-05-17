@@ -7,7 +7,7 @@ export async function POST(req: NextRequest) {
       ...creds
     } = await req.json();
       await axios({
-        url: 'http://localhost:4000/api/clients',
+        url: `${process.env.SERVER_URL}/api/clients`,
         method: 'POST',
         data: creds
       });
