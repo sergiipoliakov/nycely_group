@@ -1,0 +1,35 @@
+@use '../../../styles/color' as color
+@use '../../../styles/__moduficators/__text.sass'
+
+.input
+  &__field
+    padding: 16px
+    border-radius: 8px
+    @extend %text--default
+    display: inline-block
+    color:  color.$black
+    border: 1px solid color.$gray
+    &:hover,
+    &:focus 
+      border: 1px solid color.$gray
+    &::placeholder
+      color:  color.$gray
+    &:disabled
+      background-color: color.$background-light
+      cursor: not-allowed
+      border: 1px solid color.$gray
+    &--error 
+      border: 1px solid color.$red
+    
+  &__label
+    display: inline-block
+    color: color.$black
+    @extend %text--default
+
+  &__error
+    position: relative
+
+  &__icon
+    position: absolute
+    top: 16px
+    right: 16px

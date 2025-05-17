@@ -1,0 +1,18 @@
+@use '../../styles/color.sass' as color
+@use '../../styles/__moduficators/__text.sass'
+
+.button
+  @extend %text--default
+  position: relative
+  color: color.$black
+  &--primary
+    padding: 14px 24px 15px 24px
+    background-color: color.$background-gray
+    border-radius: 4px
+    z-index: 1
+    transition: ease-in-out 0.3s
+    &:hover
+      transition: 0.3s
+      color: color.$gray
+      background-color: color.$background-hover-gray
+      transition: all 0.2s linear
