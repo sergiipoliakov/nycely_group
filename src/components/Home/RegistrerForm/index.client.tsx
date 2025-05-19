@@ -13,6 +13,9 @@ import InputComponent from "@/common/Form/Input/index.client";
 import Button from '@/common/Button/index.client';
 import notification from '@/common/notification';
 
+// Helpers
+import { emailValidation, phoneValidation } from '@/helpers/yup.hl';
+
 // Styles
 import "intl-tel-input/styles";
 import styles from "./index.module.sass";
@@ -31,13 +34,8 @@ const RegisterForm = (props: IProps) => {
 
   const schema = Yup.object().shape({
     fullName: Yup.string().required('field Is Required'),
-    email: Yup.string().email('email Is Not Correct').required('field Is Required'),
-    phone: Yup
-      .string()
-      .typeError('please Enter Valid Number')
-      .min(8, `${'number Cant Be Less Than'} 8`)
-      .max(16, `${'number Cant Be Less Than'} 16`)
-      .required('field Is Required')
+    email: emailValidation(), 
+    phone: phoneValidation() 
   });
 
   const handlerSubmit = async () => {
